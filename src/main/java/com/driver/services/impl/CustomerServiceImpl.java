@@ -97,7 +97,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
 
-		int costOfKm=driver.getCab().getPerkmRate();
+		int costOfKm=driver.getCab().getPerKmRate();
        int totalCost=costOfKm*distanceInKm;
 
 

@@ -29,7 +29,7 @@ public class DriverServiceImpl implements DriverService {
 
 		Cab cab=Cab.builder()
 				.available(true)
-				.perkmRate(10)
+				.perKmRate(10)
 				.driver(driver)
 				.build();
 
