@@ -31,11 +31,12 @@ public class AdminServiceImpl implements AdminService {
 	public void adminRegister(Admin admin) {
 		//Save the admin in the database
 
-		Admin admin1=Admin.builder()
-				.username(admin.getUsername())
-				.password(admin.getPassword())
-				.build();
-adminRepository1.save(admin1);
+//		Admin admin1=Admin.builder()
+//				.username(admin.getUsername())
+//				.password(admin.getPassword())
+//				.build();
+
+adminRepository1.save(admin);
 
 
 	}
