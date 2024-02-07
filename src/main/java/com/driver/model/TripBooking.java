@@ -51,7 +51,7 @@ public  class TripBooking {
         return tripBookingId;
     }
 
-    public void setTripBooingId(Integer tripBookingId) {
+    public void setTripBookingId(Integer tripBookingId) {
         this.tripBookingId = tripBookingId;
     }
 
