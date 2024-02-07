@@ -37,7 +37,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
 
-		customerRepository2.save(customer1);
+		customerRepository2.save(customer);
 
 
 
@@ -70,27 +70,25 @@ public class CustomerServiceImpl implements CustomerService {
 
 		int idMin=Integer.MAX_VALUE;
 		int cabId=1;
+
   // finding the driver who is available
 		for(Driver driver : allDrivers){
 			Cab cab=driver.getCab();
 			if(cab.isAvailable() && idMin>driver.getDriverId()) {
-				cab.setAvailable(false);
+
 				idMin=driver.getDriverId();
 				cabId=cab.getId();
-
 			}
-
-
 		}
 
 		if(idMin==Integer.MAX_VALUE){
 			throw new Exception("No cab available!");
 		}
-
+		driverRepository2.findById(idMin).get().getCab().setAvailable(false);
 
 		Customer customer=customerRepository2.findById(customerId).get();
 
-		if(customer==null) throw new Exception("customer is not registerd");
+	//	if(customer==null) throw new Exception("customer is not registerd");
 
 
 		Driver driver=driverRepository2.findById(idMin).get();
